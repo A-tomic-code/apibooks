@@ -1,6 +1,10 @@
 const database = require('../database')
 
 function login(req, res){
+
+    console.log('login request');
+    console.log(req.body);
+
     let response;
 
     let username = req.body.nombre;
