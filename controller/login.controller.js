@@ -40,6 +40,9 @@ function login(req, res){
                 } else {
 
                     if(result.length > 0){
+
+                        console.log('match')
+                        console.log(result)
                         
                         response = {
                             error: false,
