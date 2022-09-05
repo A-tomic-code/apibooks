@@ -4,20 +4,21 @@ const database = require('../database');
 function getLibro(req, res) {
     let response;
     
-    let sql = `SELECT * FROM libros `;
+    let sql;
     
-    if (req.query.id) {
-        sql += `WHERE (id_libro = ${req.query.id}`;
-
-        if(req.query.id_usuario){
-            sql += ` && id_usuario = ${req.body.id_usuario}`;
-        }
-
-    sql += `)`;
-
-    console.log(sql)
+    if(req.query.id_libro && req.query.id_usuario){
+        sql = 
+        `SELECT * FROM libros
+        WHERE (id_libro = ${req.query.id_libro} && id_usuario = ${req.query.id_usuario})`
+    }else if (req.query.id_libro) {
+        sql = `SELECT * FROM libros WHERE (id_libro = ${req.query.id_libro})`
+    }else if (req.query.id_usuario){
+        sql = `SELECT * FROM libros WHERE (id_usuario = ${req.query.id_usuario})`;
+    }else {
+        sql = `SELECT * FROM libros`;
     }
     
+    console.log(sql)
 
 
     database.connect( (error) => {

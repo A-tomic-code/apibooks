@@ -37,16 +37,6 @@ CREATE TABLE `libros` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `libros`
---
-
-LOCK TABLES `libros` WRITE;
-/*!40000 ALTER TABLE `libros` DISABLE KEYS */;
-INSERT INTO `libros` VALUES (5,18,'Lo que el viento se llevo','tapa dura','mon',49.90,NULL);
-/*!40000 ALTER TABLE `libros` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `usuarios`
 --
 
@@ -66,13 +56,9 @@ CREATE TABLE `usuarios` (
 
 --
 -- Dumping data for table `usuarios`
+
 --
 
-LOCK TABLES `usuarios` WRITE;
-/*!40000 ALTER TABLE `usuarios` DISABLE KEYS */;
-INSERT INTO `usuarios` VALUES (18,'daniel','vazquez heredia','mail@server.com',NULL,'pass');
-/*!40000 ALTER TABLE `usuarios` ENABLE KEYS */;
-UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
