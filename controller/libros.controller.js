@@ -148,9 +148,12 @@ function putLibro(req, res){
         sql += ` foto = '${req.body.foto}',`
     }
 
-    sql = sql.slice(0, -1)
+    if(sql[sql.length -1] == ',') {
+        sql = sql.slice(0, -1)
+    }
 
-    sql += ` WHERE (id_libro = ${req.body.id})`
+    sql += ` WHERE (id_libro = ${req.body.id_libro})`
+
     console.log(sql);
     
     database.connect( (err) => {
